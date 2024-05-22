@@ -113,9 +113,9 @@ int main() {
 #include <stdlib.h>
 #include <string.h>
 
-struct Aluno {
+struct Dados{
+    char nome[50];
     int matricula;
-    char nome[100];
     float nota1;
     float nota2;
     float nota3;
@@ -123,50 +123,66 @@ struct Aluno {
 };
 
 int main() {
-    struct Aluno dados[5];
-    
+    struct Dados alunos[5];
+
     for(int i = 0; i < 5; i++){
         printf("Digite a Matricula do Aluno %d: ", i+1);
-        scanf(" %d", &dados[i].matricula);
+        scanf(" %d", &alunos[i].matricula);
 
         printf("Digite o Nome do Aluno %d: ", i+1);
-        scanf(" %100[^\n]s", dados[i].nome);
+        scanf(" %50[^\n]s", alunos[i].nome);
 
-        printf("Digite a Nota 1 do Aluno %d: ", i+1);
-        scanf(" %f", &dados[i].nota1);
-        printf("Digite a Nota 2 do Aluno %d: ", i+1);
-        scanf(" %f", &dados[i].nota2);
-        printf("Digite a Nota 3 do Aluno %d: ", i+1);
-        scanf(" %f", &dados[i].nota3);
+        printf("Digite a Primeira Nota do Aluno %d: ", i+1);
+        scanf(" %f", &alunos[i].nota1);
+
+        printf("Digite a Primeira Nota do Aluno %d: ", i+1);
+        scanf(" %f", &alunos[i].nota2);
+
+        printf("Digite a Primeira Nota do Aluno %d: ", i+1);
+        scanf(" %f", &alunos[i].nota3);
     }
 
-    float maiorNota1 = dados[0].nota1;
-    char alunoNota[100];
+    float maiorNota1 = alunos[0].nota1;
+    int k;
     for(int i = 0; i < 5; i++){
-        if(dados[i].nota1 > maiorNota1){
-            maiorNota1 = dados[i].nota1;
-            strcpy(alunoNota, dados[i].nome);
+        if(alunos[i].nota1 > maiorNota1){
+            maiorNota1 = alunos[i].nota1;
+            k = i;
         }
     }
-    printf("A maior nota eh %.2f do Aluno %s. \n", maiorNota1, alunoNota);
-
+    printf("Aluno com a maior Primeira Nota: %s, com nota %.2f\n", alunos[k].nome, maiorNota1);
+    
     for(int i = 0; i < 5; i++){
-        dados[i].media = (dados[i].nota1 + dados[i].nota2 + dados[i].nota3)/3; 
+        alunos[i].media = (alunos[i].nota1 + alunos[i].nota2 + alunos[i].nota3)/3;
     }
-
-    float maiorMedia = dados[0].media, menorMedia = dados[0].media;
-    char alunoMaior[100], alunoMenor[100];
+    
+    printf("\nAlunos Aprovados: \n");
     for(int i = 0; i < 5; i++){
-        if(dados[i].media > maiorMedia){
-            maiorMedia = dados[i].media;
-            strcpy(alunoMaior, dados[i].nome);
-        }else if(dados[i].media < menorMedia){
-            menorMedia = dados[i].media;
-            strcpy(alunoMenor, dados[i].nome);
+        if(alunos[i].media >= 6){
+            printf("%s foi aprovado com media %.2f.\n", alunos[i].nome, alunos[i].media);
         }
     }
-    printf("A maior media eh %.2f do Aluno %s. \n", maiorMedia, alunoMaior);
-    printf("A menor media eh %.2f do Aluno %s. \n", menorMedia, alunoMenor);        
+    printf("\nAlunos Reprovados: \n");
+    for(int i = 0; i < 5; i++){
+        if(alunos[i].media < 6){
+            printf("%s foi reprovado com media %.2f.\n", alunos[i].nome, alunos[i].media);
+        }
+    }
+
+    float maiorMedia = alunos[0].media, menorMedia = alunos[0].media;
+    int a, b;
+    for(int i = 0; i < 5; i++){
+        if(alunos[i].media > maiorMedia){
+            maiorMedia = alunos[i].media;
+            a = i;
+        } else if(alunos[i].media < menorMedia){
+            menorMedia = alunos[i].media;
+            b = i;
+        }
+    }
+    printf("\n");
+    printf("Aluno com a Maior Media: %s, com nota %.2f \n", alunos[a].nome, maiorMedia);
+    printf("Aluno com a Menor Media: %s, com nota %.2f \n", alunos[b].nome, menorMedia);
 
     return 0;
 }
