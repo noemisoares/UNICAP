@@ -829,16 +829,17 @@ struct Agenda_de_Telefone {
 int main() {
     struct Agenda_de_Telefone agenda[100];
     int escolha, i, j, k = 0, pMes, pMesDia, pMesDia2;
-    char pNome[50];
+    char pNome[50], rNome[50];
 
     do {
         printf("\nMenu de Agenda Telefonica:\n");
         printf("1. Adicionar Contato\n");
-        printf("2. Buscar por Nome\n");
-        printf("3. Buscar por Mes de Aniversario\n");
-        printf("4. Buscar por Dia e Mes de Aniversario\n");
-        printf("5. Imprimir Agenda (Nome, Telefone e Email)\n");
-        printf("6. Imprimir Agenda Completa\n");
+        printf("2. Remover Contado\n");
+        printf("3. Buscar por Nome\n");
+        printf("4. Buscar por Mes de Aniversario\n");
+        printf("5. Buscar por Dia e Mes de Aniversario\n");
+        printf("6. Imprimir Agenda (Nome, Telefone e Email)\n");
+        printf("7. Imprimir Agenda Completa\n");
         printf("0. Sair da Agenda\n");
         printf("Digite sua opcao: ");
         scanf("%d", &escolha);
@@ -909,8 +910,23 @@ int main() {
                     printf("Agenda cheia!\n");
                 }
                 break;
-
+            
             case 2:
+                printf("Digite o nome do contato que quer remover: ");
+                scanf(" %50[^\n]s", rNome);
+
+                for(i = 0; i < k; i++){
+                    if(strcmp(rNome, agenda[i].nome) == 0){
+                        for(j = i; j < k - 1; j++){
+                            agenda[j] = agenda[j + 1];
+                        }
+                        k--;
+                        printf("Contato removido\n");
+                    }
+                }
+                break;
+
+            case 3:
                 printf("\nDigite o nome que deseja buscar: ");
                 scanf(" %50[^\n]s", pNome);
 
@@ -930,7 +946,7 @@ int main() {
                 }
                 break;
 
-            case 3:
+            case 4:
                 printf("\nDigite o mes de aniversario que deseja buscar: ");
                 scanf(" %d", &pMes);
                 printf("\nContatos Encontrados:\n");
@@ -946,7 +962,7 @@ int main() {
                 }
                 break;
 
-            case 4:
+            case 5:
                 printf("\nDigite o dia de aniversario que deseja buscar: ");
                 scanf(" %d", &pMesDia);
                 printf("Digite o mes de aniversario que deseja buscar: ");
@@ -964,14 +980,14 @@ int main() {
                 }
                 break;
 
-            case 5:
+            case 6:
                 printf("\nAgenda (Nome, Telefone e Email):\n");
                 for (i = 0; i < k; i++) {
                     printf("Nome: %s | Telefone: (%d) %d | Email: %s\n", agenda[i].nome, agenda[i].telefone.DDD, agenda[i].telefone.numero, agenda[i].email);
                 }
                 break;
 
-            case 6:
+            case 7:
                 printf("\nAgenda Completa:\n");
                 for (i = 0; i < k; i++) {
                     printf("Nome: %s\n", agenda[i].nome);
