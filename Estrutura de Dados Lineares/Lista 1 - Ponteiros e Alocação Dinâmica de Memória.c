@@ -95,60 +95,65 @@ struct Dados {
     char cor_dos_olhos;
 };
 
-int main(){
-    int memoria = 0, k = 0;
-    struct Dados *dado = malloc(memoria * sizeof(struct Dados));
+int main() {
+    int memoria = 1, k = 0;
+    struct Dados *dado;
 
     printf("Bem-vindo ao Sistema de Coleta de Dados!\n"); 
     printf("Informe a quantidade de habitantes que serao registrados: ");
     scanf(" %d", &memoria);
     printf("\n");
 
-    do{
-        printf("Digite os dados da Pessoa %d: \n", k+1);
+    dado = (struct Dados *)malloc(memoria * sizeof(struct Dados));
+
+    do {
+        printf("Digite os dados da Pessoa %d: \n", k + 1);
         printf("Digite seu sexo (M/F): ");
-        scanf(" %c", &dado[k].sexo);
+        scanf(" %c", &(*(dado + k)).sexo);
         printf("Digite sua altura (Ex: 1.60): ");
-        scanf(" %f", &dado[k].altura);
+        scanf(" %f", &(*(dado + k)).altura);
         printf("Digite sua idade: ");
-        scanf(" %d", &dado[k].idade);
+        scanf(" %d", &(*(dado + k)).idade);
         printf("A - Azuis | V - Verdes | C - Castanhos | P - Pretos\n");
         printf("Digite a letra que corresponde a cor dos seus olhos: ");
-        scanf(" %c", &dado[k].cor_dos_olhos);
+        scanf(" %c", &(*(dado + k)).cor_dos_olhos);
         printf("\n");
         k++;
     } while (k < memoria);
 
     int somaIdade = 0;
-    for(int i = 0; i < k; i++){
-        if((dado[i].cor_dos_olhos == 'C' || dado[i].cor_dos_olhos == 'c') && dado[i].altura > 1.60){
-            somaIdade = somaIdade + dado[i].idade;
+    int countCastanhosAltos = 0;
+    for (int i = 0; i < k; i++) {
+        if (((*(dado + i)).cor_dos_olhos == 'C' || (*(dado + i)).cor_dos_olhos == 'c') && (*(dado + i)).altura > 1.60) {
+            somaIdade += (*(dado + i)).idade;
+            countCastanhosAltos++;
         }
     }
-    float mediaIdade = (float)somaIdade / 2;
+    float mediaIdade = countCastanhosAltos > 0 ? (float)somaIdade / countCastanhosAltos : 0;
     printf("A Media de Idade das pessoas com olhos castanhos e altura superior a 1,60 m: %.2f anos\n", mediaIdade);
 
     int maiorIdade = 0;
-    for(int i = 0; i < k; i++){
-        if(dado[i].idade > maiorIdade){
-            maiorIdade = dado[i].idade;
+    for (int i = 0; i < k; i++) {
+        if ((*(dado + i)).idade > maiorIdade) {
+            maiorIdade = (*(dado + i)).idade;
         }
     }
     printf("A Maior Idade entre os habitantes: %d anos\n", maiorIdade);
 
     int quantFeminino = 0;
-    for(int i = 0; i < k; i++){
-        if((dado[i].sexo == 'F' || dado[i].sexo == 'f') && dado[i].altura < 1.70 && ((dado[i].idade >= 20 && dado[i].idade <= 45) || (dado[i].cor_dos_olhos == 'V' || dado[i].cor_dos_olhos == 'v'))){
+    for (int i = 0; i < k; i++) {
+        if(((*(dado + i)).sexo == 'F' || (*(dado + i)).sexo == 'f') && (*(dado + i)).altura < 1.70 && (((*(dado + i)).idade >= 20 && dado[i].idade <= 45) || ((*(dado + i)).cor_dos_olhos == 'V' || (*(dado + i)).cor_dos_olhos == 'v'))){
             quantFeminino++;
         }
     }
+
     printf("A Quantidade de Mulheres cuja idade esteja entre 20 e 45 anos ");
     printf("ou que tenham olhos verdes, e altura inferior a 1,70m: %d Mulheres \n", quantFeminino);
 
     float percHomem = 0;
     int Man = 0, Women = 0;
-    for(int i = 0; i < k; i++){
-        if(dado[i].sexo == 'M' || dado[i].sexo == 'm'){
+    for (int i = 0; i < k; i++) {
+        if ((*(dado + i)).sexo == 'M' || (*(dado + i)).sexo == 'm') {
             Man++;
         } else {
             Women++;
@@ -158,7 +163,9 @@ int main(){
     if (total > 0) {
         percHomem = ((float)Man / total) * 100;
     }
-    printf("O Percentual de Homens: %f%%\n", percHomem);
-    
+    printf("O Percentual de Homens: %.2f%%\n", percHomem);
+
+    free(dado);
+
     return 0;
 }
