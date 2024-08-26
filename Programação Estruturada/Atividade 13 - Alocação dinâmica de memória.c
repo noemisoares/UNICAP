@@ -1,5 +1,4 @@
 //Atividade 13 - Alocação Dinâmica de Memória - Programação Estruturada
-//Aluna: Noemi Soares Gonçalves da Silva  RA:00000851329
 
 //CÓDIGOS DAS RESPOSTAS
 

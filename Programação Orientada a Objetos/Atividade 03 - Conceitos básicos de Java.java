@@ -1,5 +1,4 @@
-//Atividade 03 - Conceitos básicos de Java - Estruturas de Dados Lineares
-//Aluna: Noemi Soares Gonçalves da Silva  RA:00000851329
+//Atividade 03 - Conceitos Básicos de Java - Estruturas de Dados Lineares
 
 //CÓDIGOS DAS RESPOSTAS
 

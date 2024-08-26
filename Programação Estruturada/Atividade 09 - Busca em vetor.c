@@ -1,5 +1,4 @@
 //Atividade 09 - Busca em Vetor - Programação Estruturada
-//Aluna: Noemi Soares Gonçalves da Silva  RA:00000851329
 
 //CÓDIGOS DAS RESPOSTAS
 

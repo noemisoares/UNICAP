@@ -1,5 +1,4 @@
 //Atividade 03 - Conceitos Básicos de C - Programação Estruturada
-//Aluna: Noemi Soares Gonçalves da Silva  RA:00000851329
 
 //CÓDIGOS DAS RESPOSTAS
 

@@ -1,5 +1,4 @@
 #Exercício Operações entre Matrizes - Álgebra Linear
-#Noemi Soares Gonçalves da Silva RA:00000851329 
 
 import numpy as np 
 
