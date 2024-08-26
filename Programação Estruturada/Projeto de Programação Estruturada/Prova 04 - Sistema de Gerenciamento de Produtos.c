@@ -1,6 +1,6 @@
 //Prova 04 - Prof. Augusto César - Programação Estruturada
-//Alunos: Noemi Soares Gonçalves da Silva RA:00000851329
-//        Marcos Vinicius Medeiros Ferreira  RA:00000851337
+//Alunos: Noemi Soares Gonçalves da Silva
+//        Marcos Vinicius Medeiros Ferreira
 
 //Sistema de Gerenciamento de Produtos
 
