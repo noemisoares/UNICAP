@@ -1,5 +1,4 @@
 //Atividade 08 - Recursão - Programação Estruturada
-//Aluna: Noemi Soares Gonçalves da Silva  RA:00000851329
 
 //CÓDIGOS DAS RESPOSTAS
 
