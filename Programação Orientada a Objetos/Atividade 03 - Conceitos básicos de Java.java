@@ -1,4 +1,4 @@
-//Atividade 03 - Conceitos Básicos de Java - Estruturas de Dados Lineares
+//Atividade 03 - Conceitos Básicos de Java - Programação Orientada a Objeto
 
 //CÓDIGOS DAS RESPOSTAS
 
