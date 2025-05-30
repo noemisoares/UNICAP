@@ -11,7 +11,7 @@ public class App {
             System.out.println("Opções:");
             System.out.println("1 - Inserir valor na árvore");
             System.out.println("2 - Exibir as chaves por nível");
-            System.out.println("3 - Exibir as chaves pré ordem");
+            System.out.println("3 - Exibir as chaves em ordem");
             System.out.println("4 - Remover um valor da árvore");
             System.out.println("0 - Sair ");
             System.out.println("Informe a opção desejada: ");
@@ -28,12 +28,13 @@ public class App {
                     numeros.porNivel(); 
                     break;
                 case 3:
-                    System.out.println("Passeio Pré Ordem: ");
-                    numeros.preOrdem();
+                    System.out.println("Passeio Em Ordem: ");
+                    numeros.emOrdem();
                     break;
                 case 4:
-                    System.out.println("Passeio Por Nível: ");
-                    numeros.porNivel(); 
+                    System.out.println("Digite um número: ");
+                    int removerNum = scanner.nextInt();
+                    numeros.remove(removerNum);
                     break;
                 case 0:
                     System.out.println("Saindo do programa... ");
