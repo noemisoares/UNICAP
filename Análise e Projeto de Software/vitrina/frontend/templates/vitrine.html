@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil na Vitrine</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: white;
+      color: #333;
+    }
+
+    header {
+      background-color: #3b2355;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    header .logo img {
+      height: 40px;
+    }
+
+    header .icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .material-icons {
+      font-size: 24px;
+      vertical-align: middle;
+    }
+
+    .banner-perfil {
+      width: 100%;
+      height: 145px;
+      background-color: #9c81a5;
+      background-image: url('https://via.placeholder.com/1200x300');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-bottom: 2px solid #3b2355;
+    }
+
+    .foto-perfil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #9c81a5;
+      background-image: url('https://via.placeholder.com/150'); /* Troque pela imagem real */
+      background-size: cover;
+      background-position: center;
+      border: 4px solid #3b2355;
+      position: absolute;
+      top: 20px;
+      left: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .topo {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 2rem 2rem 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      background-color: white;
+      position: relative;
+      margin-top: 0px;
+    }
+
+    .topo-info {
+      flex: 2;
+      margin-left: 160px;
+    }
+
+    .topo-info h1 {
+      color: #3b2355;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .topo-info p {
+      margin-bottom: 1rem;
+    }
+
+    .topo-info .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .topo-info .info-grid div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .editar-btn {
+      background-color: #72537c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      height: fit-content;
+    }
+
+    .painel {
+      padding: 2rem;
+      background-color: #f5f5f5;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .box h3 {
+      color: #3b2355;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .avaliacoes, .desempenho {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .avaliacoes .dados, .desempenho .dados {
+      display: flex;
+      gap: 6rem;
+    }
+
+    .avaliacoes .dados div, .desempenho .dados div {
+      text-align: center;
+    }
+
+    .avaliacoes .dados div span,
+    .desempenho .dados div span {
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      color: #595959;
+    }
+
+    .btn-secundario {
+      background-color: #72537c;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .galeria {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .galeria h4 {
+      color: #3b2355;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .galeria-fotos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .galeria-fotos div {
+      width: 100%;
+      height: 70px;
+      background-color: #ddd;
+      border-radius: 5px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .galeria-fotos .mais {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-color: #ccc;
+    }
+
+    .galeria-adicionar {
+      margin-top: 1rem;
+      text-align: center;
+      color: #72537c;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .galeria-adicionar:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="{% url 'homepage' %}" class="logo">
+      <img src="{% static 'imagens/logomarca_branca.png' %}" alt="Logo">
+    </a>
+    <div class="icons">
+      <span class="material-icons">notifications</span>
+      <span class="material-icons">account_circle</span>
+    </div>
+  </header>
+
+  <div class="banner-perfil"></div>
+
+  <div class="topo">
+    <div class="foto-perfil"></div>
+    <div class="topo-info">
+      <h1>PADARIA LEÃO XIV</h1>
+      <p>Padaria local que serve produtos frescos diariamente, além de produtos assados deliciosos.</p>
+      <div class="info-grid">
+        <div><span class="material-icons">group</span>145 seguidores</div>
+        <div><span class="material-icons">call</span>(55) 4002-8922</div>
+        <div><span class="material-icons">language</span>www.padariadoleao.com.br</div>
+        <div><span class="material-icons">storefront</span>Padaria</div>
+        <div><span class="material-icons">schedule</span>Das 6h às 18h</div>
+        <div><span class="material-icons">location_on</span>Rua da Pamonha, 124, Recife, Brasil</div>
+      </div>
+    </div>
+    <button class="editar-btn">EDITAR</button>
+  </div>
+
+  <div class="painel">
+    <div>
+      <div class="box">
+        <h3><span class="material-icons">bar_chart</span>AVALIAÇÕES</h3>
+        <div class="avaliacoes">
+          <div class="dados">
+            <div><strong>4.6</strong><span>Classificação</span></div>
+            <div><strong>31</strong><span>Avaliações</span></div>
+            <div><strong>12</strong><span>Comentários sem Resposta</span></div>
+          </div>
+          <button class="btn-secundario">Gerenciar avaliações</button>
+        </div>
+      </div>
+
+      <div class="box" style="margin-top: 1.5rem;">
+        <h3><span class="material-icons">show_chart</span>DESEMPENHO</h3>
+        <div class="desempenho">
+          <div class="dados">
+            <div><strong>3678</strong><span>Visualizações do perfil</span></div>
+            <div><strong>478</strong><span>Cliques no site</span></div>
+            <div><strong>35</strong><span>Chamadas e Solicitações</span></div>
+          </div>
+          <button class="btn-secundario">Visualizar insights</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <h4><span class="material-icons">photo_library</span>GALERIA DE FOTOS</h4>
+      <div class="galeria-fotos">
+        <div style="background-image: url('https://via.placeholder.com/80')"></div>
+        <div style="background-image: url('https://via.placeholder.com/80')"></div>
+        <div style="background-image: url('https://via.placeholder.com/80')"></div>
+        <div style="background-image: url('https://via.placeholder.com/80')"></div>
+        <div style="background-image: url('https://via.placeholder.com/80')"></div>
+        <div class="mais">+6</div>
+      </div>
+      <div class="galeria-adicionar"><span class="material-icons">add_a_photo</span> Adicionar fotos</div>
+    </div>
+  </div>
+</body>
+</html>

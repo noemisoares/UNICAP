@@ -1,0 +1,370 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Vitrina - Destaque seu Negócio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header .logo {
+      font-weight: bold;
+      color: #3c0057;
+      font-size: 24px;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    nav a:last-child {
+      background: #3c0057;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+      background: #ffffff;
+    }
+
+    .hero-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-content h1 {
+      font-size: 58px;
+      color: #2c023d;
+      margin-bottom: 10px;
+    }
+
+    .hero-content h2 {
+      font-size: 42px;
+      color: #3c0057;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      max-width: 600px;
+      margin: 20px 0;
+      font-size: 22px;
+    }
+
+    .hero-content button {
+      background: #3c0057;
+      color: white;
+      border: none;
+      padding: 12px 46px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .services {
+      background: #3c0057;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .services h2 {
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
+
+    .service-items {
+      display: flex;
+      justify-content: center;
+      gap: 100px;
+      flex-wrap: wrap;
+    }
+
+    .service-item {
+      width: 250px;
+    }
+
+    .service-item h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .material-icons {
+      font-size: 40px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .interaction {
+      padding: 60px 20px;
+      text-align: left;
+    }
+
+    .interaction-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .interaction-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .interaction-image img {
+      max-width: 60%;
+      height: auto;
+    }
+
+    .interaction-text {
+      flex: 1 1 400px;
+    }
+
+    .interaction h2 {
+      font-size: 42px;
+      color: #3c0057;
+      margin-bottom: 20px;
+    }
+
+    .interaction h3 {
+      font-size: 28px;
+      color: #3c0057;
+      margin-top: 30px;
+    }
+
+    .interaction p {
+      font-size: 18px;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .negocio-section {
+      background-color: #3d1966;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .negocio-section h2 {
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+    }
+
+    .card {
+      max-width: 270px;
+      text-align: center;
+    }
+
+    .card .material-icons {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .faq {
+      background: #f9f9f9;
+      padding: 60px 20px;
+    }
+
+    .faq h2 {
+      text-align: center;
+      color: #3c0057;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .question {
+      max-width: 700px;
+      margin: 10px auto;
+      padding: 15px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #3c0057;
+    }
+
+    footer {
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+      color: #3a1d48;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{% static 'imagens/logomarca.png' %}" alt="logo" />
+    </div>
+    <nav>
+      <a href="#">Como Funciona</a>
+      <a href="#">Recursos</a>
+      <a href="#">Blog</a>
+      <a href="{% url 'login' %}">Entrar</a>
+      <a href="{% url 'cadastro' %}">Registrar-se</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>DESTAQUE SEU NEGÓCIO</h1>
+      <h2>COM UM PERFIL DE NEGÓCIOS GRATUITO</h2>
+      <p>Transforme sua presença online com um perfil gratuito. Alcance mais clientes, publique atualizações, receba avaliações e muito mais — tudo em um só lugar.</p>
+      <a href="{% url 'telaescolha' %}">
+        <button>Começar agora</button>
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="{% static 'imagens/loja_homepage.png' %}" alt="Ilustração do negócio" />
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>IMPULSIONE SEU NEGÓCIO</h2>
+    <div class="service-items">
+      <div class="service-item">
+        <span class="material-icons">shopping_cart</span>
+        <h3>Consultoria Estratégica Personalizada</h3>
+        <p>Soluções adaptadas para transferência de seu negócio com estratégicas.</p>
+      </div>
+      <div class="service-item">
+        <span class="material-icons">work</span>
+        <h3>Marketing Digital Inovador</h3>
+        <p>Potencializar sua presença online com campanhas criativas e direcionadas ao seu público-alvo.</p>
+      </div>
+      <div class="service-item">
+        <span class="material-icons">supervisor_account</span>
+        <h3>Gestão de Redes de Comércio</h3>
+        <p>Maximize o engajamento e atraia mais clientes com conteúdos relevantes e atrativos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="interaction">
+    <div class="interaction-wrapper">
+      <div class="interaction-image">
+        <img src="{% static 'imagens/avaliacoes.png' %}" alt="Interação com clientes">
+      </div>
+      <div class="interaction-text">
+        <h2>INTERAJA FACILMENTE COM OS CLIENTES</h2>
+        <p>Deixe os clientes informados com postagens, ofertas, mensagens diretas e muito mais.</p>
+
+        <h3>CRIE POSTAGENS, OFERTAS E EVENTOS</h3>
+        <p>Adicione postagens ao seu perfil para promover ofertas, eventos e novidades, deixando os clientes sempre informados.</p>
+
+        <h3>RESPONDA A AVALIAÇÕES</h3>
+        <p>Responda às avaliações públicas para conquistar a confiança de clientes novos e recorrentes.</p>
+
+        <h3>PUBLIQUE RESPOSTAS A PERGUNTAS FREQUENTES</h3>
+        <p>Inclua informações comerciais úteis e economize tempo publicando respostas a dúvidas comuns. Você também pode permitir que os clientes respondam às perguntas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="negocio-section">
+    <h2>MOSTRE O MELHOR DO SEU NEGÓCIO</h2>
+    <div class="cards-container">
+      <div class="card">
+        <span class="material-icons">person_add</span>
+        <h3>Reivindicar</h3>
+        <p>Crie um perfil de negócio ou gerencie um que já esteja na sua conta</p>
+      </div>
+      <div class="card">
+        <span class="material-icons">edit</span>
+        <h3>Personalizar</h3>
+        <p>Adicione o horário de funcionamento, fotos e outros detalhes para que clientes próximos vejam sua empresa</p>
+      </div>
+      <div class="card">
+        <span class="material-icons">trending_up</span>
+        <h3>Gerenciar</h3>
+        <p>Compartilhe novidades, responda a avaliações e interaja com os clientes no Google</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>RESPOSTAS PARA SUAS PERGUNTAS</h2>
+    <div class="question">01. O perfil na Vitrina é gratuito?</div>
+    <div class="question">02. Minha empresa não tem um estabelecimento físico. Posso criar mesmo assim?</div>
+    <div class="question">03. Faz diferença se eu usar os dados para gerir e conhecer meu perfil?</div>
+  </section>
+
+  <footer>
+    <span>©2025 Vitrina, Inc.</span>
+    <span>Quem Somos?</span>
+    <span>Parcerias</span>
+    <span>Termos & Privacidade</span>
+  </footer>
+
+</body>
+</html>

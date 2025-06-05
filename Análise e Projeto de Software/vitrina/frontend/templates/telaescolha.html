@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Escolha seu perfil</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .left, .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .left {
+      background-color: #3c0057;
+      color: white;
+    }
+
+    .right {
+      background-color: white;
+      color: #3c0057;
+    }
+
+    .title1 {
+      position: absolute;
+      top: 40px;
+      right: 46.8%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .title2 {
+      position: absolute;
+      top: 40px;
+      left: 53.5%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #3c0057;
+    }
+
+    .box {
+      background-color: #ddd;
+      width: 420px;
+      height: 460px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .img-consumidor {
+      width: 420px;
+      height: auto;
+      margin-bottom: -10px;
+    }
+
+    .img-empreendedor {
+      width: 475px;
+      height: auto;
+      margin-bottom: -9px;
+    }
+
+    .box span {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #3c0057;
+    }
+
+    .span-consumidor {
+      margin-bottom: -20px;
+    }
+
+    .span-empreendedor {
+      margin-bottom: -56px;
+    }
+
+    .right .box {
+      background-color: #3c0057;
+    }
+
+    .right .box span {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <a href="{% url 'cadastro' %}" class="back-arrow">&#8592;</a>
+    <div class="title1">Você é</div>
+    <div class="title2">um...</div>
+    <a href="{% url 'perfil' %}" class="box">
+      <span class="span-consumidor">Consumidor</span>
+      <img class="img-consumidor" src="{% static 'imagens/homem_consumidor.png' %}" alt="Consumidor">
+    </a>
+  </div>
+  <div class="right">
+    <a href="{% url 'vitrine' %}" class="box">
+      <span class="span-empreendedor">Empreendedor</span>
+      <img class="img-empreendedor" src="{% static 'imagens/mulher_empreendedor.png' %}" alt="Empreendedor">
+    </a>
+  </div>
+</body>
+</html>

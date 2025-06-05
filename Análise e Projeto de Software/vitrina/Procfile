@@ -1,0 +1,1 @@
+web: gunicorn Vitrina.wsgi --log-file -

@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left {
+      flex: 1;
+      background: #fff;
+      color: #3c004e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .logo-img {
+      width: 350px;
+      height: auto;
+      margin-bottom: 40px;
+    }
+
+    .slogan {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .icon-img {
+      width: 400px;
+      height: auto;
+    }
+
+    .left p {
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    .illustration {
+      margin-top: 40px;
+      width: 250px;
+    }
+
+    .right {
+      flex: 1;
+      background: #e2dae6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #f0eeff;
+    }
+
+    .forgot {
+      font-size: 0.8rem;
+      text-align: right;
+      margin-bottom: 20px;
+      color: #6b5b95;
+    }
+
+    .login-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #5f43b2;
+      color: white;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    .continue {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.2rem;
+      color: #3c0057;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: transparent;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .back-arrow:hover {
+      background-color: #f0e6f6;
+    }
+
+    .register-link {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #444;
+    }
+
+    .register-link a {
+      color: #5f43b2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+
+
+  </style>
+</head>
+<body>
+  <a href="{% url 'homepage' %}" class="back-arrow">← Voltar</a>
+
+  <div class="left">
+    <a href="{% url 'homepage' %}">
+      <img class="logo-img" src="{% static 'imagens/logomarca.png' %}" alt="logo" />
+    </a>
+    <div class="slogan">
+      <img class="icon-img" src="{% static 'imagens/mulher_login.png' %}" alt="ícone" />
+      <p>Onde seus<br>negócios<br>ganham vida!</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="login-box">
+      <h2>Fazer Login</h2>
+      <div class="input-group">
+        <input type="text" placeholder="Email">
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Senha">
+      </div>
+      <div class="forgot">Esqueceu a senha?</div>
+      <a href="{% url 'vitrine' %}" class="login-btn">Login</a>
+      <div class="continue">ou continue com</div>
+      <div class="social-icons">
+        <img src="https://img.icons8.com/ios-filled/50/facebook-new.png"/>
+        <img src="https://img.icons8.com/ios-filled/50/google-logo.png"/>
+      </div>
+      <p class="register-link">Ainda não tem uma conta? <a href="{% url 'cadastro' %}">Registre-se</a></p>
+    </div>
+  </div>
+</body>
+</html>
