@@ -1,0 +1,39 @@
+table {
+  width: 250px;
+  border: 0cqmax;
+}
+
+div {
+  outline-color: #5b7bf9;
+  outline-offset: 2px;
+  outline-style: double;
+  outline-width: 2px;
+  opacity: 0.7;
+}
+
+div {
+  margin-left: 20px;
+  padding-left: 20px;
+  width: 100%;
+  min-width: 150px;
+  max-width: 250px;
+}
+
+ol {
+  list-style-type: circle;
+}
+
+p {
+  background-color: rgb(246, 249, 255);
+  width: 450px;
+  line-height: 1.2;
+  text-align: left;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+td {
+  border-color: rgb(85, 125, 255);
+  border-width: 2px;
+  border-radius: 5px;
+  border-style: dashed;
+}

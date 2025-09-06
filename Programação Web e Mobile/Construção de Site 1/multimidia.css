@@ -1,0 +1,49 @@
+.menu {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.menuitem {
+  float: left;
+}
+
+.menuitem a {
+  display: block;
+  text-decoration: none;
+  color: #1f1f1f;
+  padding: 10px;
+}
+
+.menuitem a:hover,
+.menuitem:hover .dropbutton {
+  background-color: #2f67d6;
+  color: #fff;
+}
+
+.active {
+  background-color: rgb(37, 109, 176);
+  color: #ffffff;
+}
+
+.seasoncontent {
+  display: none;
+  position: absolute;
+  background-color: #eee;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.seasoncontent a {
+  color: black;
+  padding: 12px 16px;
+}
+
+.menuitem:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #eee;
+}
