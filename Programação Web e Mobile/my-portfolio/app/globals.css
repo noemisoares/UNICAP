@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --primary: #1e3a8a;
+  --secondary: #1e2f6d;
+  --bg: #ffffff;
+  --text: #111111;
+  --header-bg: #f1f5f9;
+}
+
+.dark {
+  --primary: #e8ecf8;
+  --secondary: #1d69d4;
+  --bg: #1b1e23;
+  --text: #e2e8f0;
+  --header-bg: #053584;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--header-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.name {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.theme-button {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+}

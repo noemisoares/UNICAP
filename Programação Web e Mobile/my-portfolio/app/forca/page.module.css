@@ -1,0 +1,46 @@
+.page {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  padding-left: 80px;
+  min-height: 70vh;
+}
+
+.rules {
+  width: 500px;
+  padding: 0.5rem;
+}
+
+.rules h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.rules ul {
+  list-style: disc;
+  margin-top: 10px;
+  padding-left: 1.5rem;
+}
+
+.rules li {
+  margin-bottom: 0.5rem;
+}
+
+.greenText {
+  color: rgb(2, 137, 2);
+  font-weight: bold;
+}
+
+.redText {
+  color: rgb(214, 4, 4);
+  font-weight: bold;
+}
+
+.game {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

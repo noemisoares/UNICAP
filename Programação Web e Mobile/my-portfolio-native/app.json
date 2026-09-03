@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Meu Portfólio",
+    "slug": "my-portfolio-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/dadodnd.png",
+    "scheme": "myportfolionative",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.noemisoares.myportfolionative"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1b1e23",
+        "foregroundImage": "./assets/dadodnd.png",
+        "backgroundImage": "./assets/dadodnd.png",
+        "monochromeImage": "./assets/dadodnd.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.noemisoares.myportfolionative"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/dadodnd.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/dadodnd.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "35292c7e-716c-48d7-b232-13cf742f3fb8"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/35292c7e-716c-48d7-b232-13cf742f3fb8"
+    }
+  }
+}
